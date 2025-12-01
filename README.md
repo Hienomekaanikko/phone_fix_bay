@@ -1,18 +1,24 @@
-# React + Vite
+<img width="1440" height="821" alt="Näyttökuva 2025-12-1 kello 13 17 58" src="https://github.com/user-attachments/assets/c9247c60-1f73-4c7e-a3df-bc99eca04690" /># PhoneFixBay
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A place where phone engineers can share their knowledge with each other. There are so many little tips and tricks that are very case specific, that it's good to have a place where it's first of all EASY to share stuff that only experience with these intricate devices can give.
 
-Currently, two official plugins are available:
+There is lot of information online that does not come from the experienced fellows but it's mostly guessing etc. So here we have REAL information that is tested.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I used react + tailwind setup in this pretty simple frontend. The database will utilize mongo atlas.
 
-## React Compiler
+Simple log-in page:
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+<img width="1440" height="823" alt="Näyttökuva 2025-12-1 kello 13 16 41" src="https://github.com/user-attachments/assets/cc1c5d60-bc36-4615-96be-d057afaf08b5" />
 
-Note: This will impact Vite dev & build performances.
+No fluff frontpage. Contributors get some glory ofc:
 
-## Expanding the ESLint configuration
+<img width="1440" height="820" alt="Näyttökuva 2025-12-1 kello 13 17 06" src="https://github.com/user-attachments/assets/917cba96-3497-43e8-a6ef-299b7116130b" />
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Easy submission. Straight to the point:
+
+<img width="1440" height="819" alt="Näyttökuva 2025-12-1 kello 13 17 42" src="https://github.com/user-attachments/assets/a4e03d15-6b6d-4b0a-a81c-3f9c8e9cc5b9" />
+
+Manual check is done for each submission to prevent weird stuff.
+
+<img width="1440" height="821" alt="Näyttökuva 2025-12-1 kello 13 17 58" src="https://github.com/user-attachments/assets/34b88e16-f549-4a4c-959d-02296a2ebc39" />
+
