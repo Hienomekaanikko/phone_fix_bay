@@ -5,18 +5,46 @@ export default function ContributeForm({ onClose, onSubmit }) {
   const [issue, setIssue] = useState("");
   const [solution, setSolution] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null);
+
     if (!phoneModel || !issue || !solution) {
       alert("Please fill all fields");
       return;
     }
-    onSubmit({ phoneModel, issue, solution });
-    setPhoneModel("");
-    setIssue("");
-    setSolution("");
-    setSubmitted(true); // show the thank-you message
+
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contributions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phoneModel, issue, solution }),
+      });
+
+      if (!res.ok) throw new Error("Failed to save contribution");
+
+      const data = await res.json();
+      console.log("Saved:", data);
+
+      // Call parent callback
+      onSubmit({ phoneModel, issue, solution });
+
+      // Clear form
+      setPhoneModel("");
+      setIssue("");
+      setSolution("");
+      setSubmitted(true);
+    } catch (err) {
+      console.error(err);
+      setError(err.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -26,7 +54,7 @@ export default function ContributeForm({ onClose, onSubmit }) {
       {submitted ? (
         <div className="flex flex-col items-center space-y-4">
           <p className="text-green-700 text-center">
-            Thank you for contributing! Your submission will be double-checked within 2 days (so that no one is trying to screw us over with silly poems or something). Thanks for your patience!
+            Thank you for contributing! Your submission will be reviewed within 2 days.
           </p>
           <button
             onClick={() => { setSubmitted(false); onClose(); }}
@@ -57,6 +85,9 @@ export default function ContributeForm({ onClose, onSubmit }) {
             onChange={(e) => setSolution(e.target.value)}
             className="px-2 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400"
           />
+
+          {error && <p className="text-red-600">{error}</p>}
+
           <div className="flex justify-between">
             <button
               type="button"
@@ -67,9 +98,10 @@ export default function ContributeForm({ onClose, onSubmit }) {
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-sky-400 text-white rounded-md hover:bg-sky-500 transition-all"
+              disabled={loading}
+              className="px-4 py-2 bg-sky-400 text-white rounded-md hover:bg-sky-500 transition-all disabled:opacity-50"
             >
-              Submit
+              {loading ? "Saving..." : "Submit"}
             </button>
           </div>
         </form>
