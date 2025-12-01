@@ -31,10 +31,8 @@ export default function ContributeForm({ onClose, onSubmit }) {
       const data = await res.json();
       console.log("Saved:", data);
 
-      // Call parent callback
       onSubmit({ phoneModel, issue, solution });
 
-      // Clear form
       setPhoneModel("");
       setIssue("");
       setSolution("");

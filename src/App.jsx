@@ -34,7 +34,6 @@ function App() {
 
   return (
     <section className="relative h-screen bg-gradient-to-r from-sky-400 via-indigo-250 to-purple-600 flex flex-col items-center justify-center">
-      {/* Logout */}
       <button
         onClick={handleLogout}
         className="absolute top-4 right-4 text-yellow-300 px-4 py-2 transition-all"
@@ -49,13 +48,10 @@ function App() {
 
       <p className="text-yellow-200 mt-4">Welcome, {userData?.username}!</p>
 
-      {/* Phone search */}
       <PhoneSearch />
 
-      {/* Navbar */}
       <NavBar onContribute={() => setShowContribute(true)} />
 
-      {/* Contribute form */}
       {showContribute && (
         <ContributeForm
           onClose={() => setShowContribute(false)}
