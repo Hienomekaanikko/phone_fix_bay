@@ -1,4 +1,4 @@
-<img width="1440" height="821" alt="Näyttökuva 2025-12-1 kello 13 17 58" src="https://github.com/user-attachments/assets/c9247c60-1f73-4c7e-a3df-bc99eca04690" /># PhoneFixBay
+# PhoneFixBay
 
 A place where phone engineers can share their knowledge with each other. There are so many little tips and tricks that are very case specific, that it's good to have a place where it's first of all EASY to share stuff that only experience with these intricate devices can give.
 
